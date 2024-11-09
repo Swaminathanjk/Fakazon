@@ -1,0 +1,151 @@
+/* Cart Item Container */
+.cart-item-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+/* Left Part - Image Section */
+.item-left-part {
+  flex: 0 0 100px; /* Fixed width for the image */
+  margin-right: 20px;
+}
+
+.cart-item-img {
+  width: 100%;
+  height: 100px; /* Adjust image size */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Right Part - Item Details */
+.item-right-part {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Company Name */
+.company {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Item Name */
+.item-name {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* Price Container */
+.price-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.current-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ff5722;
+  margin-right: 10px;
+}
+
+.original-price {
+  font-size: 1rem;
+  text-decoration: line-through;
+  color: #888;
+  margin-right: 10px;
+}
+
+.discount-percentage {
+  font-size: 1rem;
+  color: #4caf50;
+}
+
+/* Quantity and Add/Remove Icons */
+.qty {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.add, .minus {
+  font-size: 1.5rem;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+/* Remove from Cart Button */
+.remove-from-cart {
+  cursor: pointer;
+  color: #f44336;
+  font-size: 1.5rem;
+}
+
+.remove-from-cart:hover {
+  color: #d32f2f;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cart-item-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .item-left-part {
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 120px; /* Adjust image size for smaller screens */
+  }
+
+  .item-right-part {
+    flex: 1;
+  }
+
+  .price-container {
+    flex-direction: column;
+  }
+
+  .current-price {
+    font-size: 1rem;
+  }
+
+  .original-price {
+    font-size: 0.9rem;
+  }
+
+  .remove-from-cart {
+    font-size: 1.3rem;
+  }
+
+  .qty {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cart-item-container {
+    padding: 10px;
+  }
+
+  .cart-item-img {
+    height: 80px; /* Reduce image size for smaller screens */
+  }
+
+  .item-name {
+    font-size: 1rem;
+  }
+
+  .company {
+    font-size: 0.9rem;
+  }
+}

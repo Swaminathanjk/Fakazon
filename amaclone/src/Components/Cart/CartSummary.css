@@ -1,0 +1,149 @@
+/* Cart Summary Container */
+.cart-summary {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 60px;
+}
+
+/* Cart Details */
+.cart-details-container {
+  margin-bottom: 20px;
+}
+
+.price-header {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.price-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.price-item-tag {
+  font-weight: normal;
+  color: #555;
+}
+
+.price-item-value {
+  font-weight: bold;
+  color: #333;
+}
+
+.priceDetail-base-discount {
+  color: #f44336; /* Red for discounts */
+}
+
+/* Price Footer */
+.price-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 10px;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
+.price-item-value {
+  color: #333;
+}
+
+/* Payment Method Section */
+.payment-method-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+/* Style each label and input pair */
+.payment-method-container label {
+  display: flex; /* Align the radio button and label horizontally */
+  align-items: center; /* Vertically align radio button with text */
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Adjust the radio button */
+.payment-method-container input[type="radio"] {
+  margin-right: 1px; /* Space between radio button and text */
+  accent-color: #ff5722; /* Optional: color for selected radio button */
+}
+
+/* Place Order Button */
+.btn-place-order {
+  background-color: #ff5722;
+  color: white;
+  width: 100%;
+  padding: 12px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-place-order h3 {
+  margin: 0;
+  font-weight: bold;
+}
+
+.btn-place-order:hover {
+  background-color: #e64a19;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cart-summary {
+    margin-top: 20px;
+
+    padding: 15px;
+  }
+
+  .price-item,
+  .price-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .price-item-value {
+    font-size: 1rem;
+  }
+
+  .payment-method-container label {
+    font-size: 0.9rem;
+  }
+
+  .btn-place-order {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cart-summary {
+    margin-top: 20px;
+    padding: 10px;
+  }
+
+  .price-item {
+    font-size: 0.9rem;
+  }
+
+  .price-footer {
+    font-size: 1rem;
+  }
+
+  .btn-place-order {
+    font-size: 1rem;
+    padding: 10px;
+  }
+}

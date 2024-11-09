@@ -1,0 +1,154 @@
+/* Home Item Container */
+.item-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin: 10px;
+  transition: transform 0.3s ease-in-out;
+  width: 100%;
+  max-width: 300px; /* Limit width on larger screens */
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
+}
+
+.item-container:hover {
+  transform: scale(1.05); /* Slight hover effect */
+}
+
+/* Item Image */
+.item-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Ensures the image is well contained */
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* Item Details Section */
+.item-details {
+  width: 100%;
+  text-align: center;
+}
+
+/* Company Name */
+.company-name {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+/* Item Name */
+.item-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #232f3e;
+  margin-bottom: 10px;
+}
+
+/* Price Section */
+.price {
+  font-size: 1rem;
+  color: #232f3e;
+  margin-bottom: 15px;
+}
+
+.current-price {
+  font-weight: bold;
+  color: #ff9900;
+  margin-right: 5px;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.discount {
+  font-size: 0.9rem;
+  color: #ff4500;
+}
+
+/* Buttons Section */
+.btn-add-bag,
+.btn-remove-bag {
+  background-color: #ff9900;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-add-bag:hover,
+.btn-remove-bag:hover {
+  background-color: #e68900;
+}
+
+/* Icons */
+.add,
+.trash {
+  margin-right: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .item-container {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .item-image {
+    height: 180px; /* Adjust image height for smaller screens */
+  }
+
+  .company-name {
+    font-size: 0.9rem;
+  }
+
+  .item-name {
+    font-size: 1.1rem;
+  }
+
+  .price {
+    font-size: 0.9rem;
+  }
+
+  .btn-add-bag,
+  .btn-remove-bag {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .item-container {
+    padding: 8px;
+  }
+
+  .item-image {
+    height: 160px; /* Further adjust image height for small devices */
+  }
+
+  .company-name,
+  .item-name,
+  .price {
+    font-size: 0.85rem; /* Reduce text size for mobile */
+  }
+
+  .btn-add-bag,
+  .btn-remove-bag {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+}

@@ -1,0 +1,644 @@
+{
+  "items": [
+    {
+      "id": "001",
+      "image": "/images/groceries/1.jpg",
+      "company": "Fresh Farms",
+      "item_name": "Organic Almonds 500g",
+      "category": "Groceries",
+      "original_price": 700,
+      "current_price": 560,
+      "discount_percentage": 20,
+      "return_period": 7,
+      "delivery_date": "12 Nov 2023",
+      "rating": {
+        "stars": 4.3,
+        "count": 320
+      }
+    },
+    {
+      "id": "002",
+      "image": "/images/groceries/2.jpg",
+      "company": "Daawat",
+      "item_name": "Whole Grain Rice 1kg",
+      "category": "Groceries",
+      "original_price": 120,
+      "current_price": 96,
+      "discount_percentage": 20,
+      "return_period": 7,
+      "delivery_date": "13 Nov 2023",
+      "rating": {
+        "stars": 4.6,
+        "count": 890
+      }
+    },
+    {
+      "id": "003",
+      "image": "/images/groceries/3.jpg",
+      "company": "NutriGood",
+      "item_name": "Chia Seeds 200g",
+      "category": "Groceries",
+      "original_price": 150,
+      "current_price": 120,
+      "discount_percentage": 20,
+      "return_period": 7,
+      "delivery_date": "10 Nov 2023",
+      "rating": {
+        "stars": 4.2,
+        "count": 540
+      }
+    },
+    {
+      "id": "004",
+      "image": "/images/groceries/4.jpg",
+      "company": "Pure Spices",
+      "item_name": "Turmeric Powder 100g",
+      "category": "Groceries",
+      "original_price": 60,
+      "current_price": 48,
+      "discount_percentage": 20,
+      "return_period": 7,
+      "delivery_date": "11 Nov 2023",
+      "rating": {
+        "stars": 4.7,
+        "count": 430
+      }
+    },
+    {
+      "id": "005",
+      "image": "/images/groceries/5.jpg",
+      "company": "Fruit Basket",
+      "item_name": "Fresh Apples 1kg",
+      "category": "Groceries",
+      "original_price": 180,
+      "current_price": 150,
+      "discount_percentage": 17,
+      "return_period": 7,
+      "delivery_date": "10 Nov 2023",
+      "rating": {
+        "stars": 4.8,
+        "count": 670
+      }
+    },
+    {
+      "id": "006",
+      "image": "/images/groceries/6.jpg",
+      "company": "Green Farm",
+      "item_name": "Organic Honey 250g",
+      "category": "Groceries",
+      "original_price": 210,
+      "current_price": 168,
+      "discount_percentage": 20,
+      "return_period": 7,
+      "delivery_date": "12 Nov 2023",
+      "rating": {
+        "stars": 4.5,
+        "count": 920
+      }
+    },
+    {
+      "id": "007",
+      "image": "/images/groceries/7.jpg",
+      "company": "Natural Choice",
+      "item_name": "Peanut Butter 500g",
+      "category": "Groceries",
+      "original_price": 250,
+      "current_price": 200,
+      "discount_percentage": 20,
+      "return_period": 7,
+      "delivery_date": "13 Nov 2023",
+      "rating": {
+        "stars": 4.4,
+        "count": 610
+      }
+    },
+    {
+      "id": "008",
+      "image": "/images/groceries/8.jpg",
+      "company": "Veg Fresh",
+      "item_name": "Organic Carrots 1kg",
+      "category": "Groceries",
+      "original_price": 80,
+      "current_price": 65,
+      "discount_percentage": 19,
+      "return_period": 7,
+      "delivery_date": "10 Nov 2023",
+      "rating": {
+        "stars": 4.7,
+        "count": 500
+      }
+    },
+    {
+      "id": "009",
+      "image": "/images/electronics/1.jpg",
+      "company": "TechCorp",
+      "item_name": "Wireless Earbuds",
+      "category": "Electronics",
+      "original_price": 2500,
+      "current_price": 2000,
+      "discount_percentage": 20,
+      "return_period": 30,
+      "delivery_date": "15 Nov 2023",
+      "rating": {
+        "stars": 4.5,
+        "count": 1400
+      }
+    },
+    {
+      "id": "010",
+      "image": "/images/electronics/2.jpg",
+      "company": "Vision Plus",
+      "item_name": "Smart LED TV 42 inch",
+      "category": "Electronics",
+      "original_price": 32000,
+      "current_price": 29000,
+      "discount_percentage": 9,
+      "return_period": 30,
+      "delivery_date": "18 Nov 2023",
+      "rating": {
+        "stars": 4.7,
+        "count": 300
+      }
+    },
+    {
+      "id": "011",
+      "image": "/images/electronics/3.jpg",
+      "company": "PowerHouse",
+      "item_name": "Portable Charger 10000mAh",
+      "category": "Electronics",
+      "original_price": 1200,
+      "current_price": 960,
+      "discount_percentage": 20,
+      "return_period": 30,
+      "delivery_date": "14 Nov 2023",
+      "rating": {
+        "stars": 4.3,
+        "count": 750
+      }
+    },
+    {
+      "id": "012",
+      "image": "/images/electronics/4.jpg",
+      "company": "SoundMax",
+      "item_name": "Bluetooth Speaker",
+      "category": "Electronics",
+      "original_price": 3000,
+      "current_price": 2550,
+      "discount_percentage": 15,
+      "return_period": 30,
+      "delivery_date": "16 Nov 2023",
+      "rating": {
+        "stars": 4.6,
+        "count": 1200
+      }
+    },
+    {
+      "id": "013",
+      "image": "/images/electronics/5.jpg",
+      "company": "Gizmo World",
+      "item_name": "Smart Watch",
+      "category": "Electronics",
+      "original_price": 4500,
+      "current_price": 4050,
+      "discount_percentage": 10,
+      "return_period": 30,
+      "delivery_date": "15 Nov 2023",
+      "rating": {
+        "stars": 4.8,
+        "count": 850
+      }
+    },
+    {
+      "id": "014",
+      "image": "/images/electronics/6.jpg",
+      "company": "LensPro",
+      "item_name": "Digital Camera",
+      "category": "Electronics",
+      "original_price": 18500,
+      "current_price": 16500,
+      "discount_percentage": 11,
+      "return_period": 30,
+      "delivery_date": "18 Nov 2023",
+      "rating": {
+        "stars": 4.7,
+        "count": 430
+      }
+    },
+    {
+      "id": "015",
+      "image": "/images/electronics/7.jpg",
+      "company": "Amazon",
+      "item_name": "Alexa",
+      "category": "Electronics",
+      "original_price": 9000,
+      "current_price": 7650,
+      "discount_percentage": 15,
+      "return_period": 30,
+      "delivery_date": "16 Nov 2023",
+      "rating": {
+        "stars": 4.6,
+        "count": 670
+      }
+    },
+    {
+      "id": "016",
+      "image": "/images/electronics/8.jpg",
+      "company": "PixelPro",
+      "item_name": "Tablet 10 inch",
+      "category": "Electronics",
+      "original_price": 18000,
+      "current_price": 16000,
+      "discount_percentage": 11,
+      "return_period": 30,
+      "delivery_date": "15 Nov 2023",
+      "rating": {
+        "stars": 4.4,
+        "count": 940
+      }
+    },
+    {
+      "id": "017",
+      "image": "/images/clothing/1.jpg",
+      "company": "Urban Wear",
+      "item_name": "Men's Slim Fit Jeans",
+      "category": "Clothing",
+      "original_price": 1999,
+      "current_price": 1599,
+      "discount_percentage": 20,
+      "return_period": 15,
+      "delivery_date": "12 Nov 2023",
+      "rating": {
+        "stars": 4.4,
+        "count": 1800
+      }
+    },
+    {
+      "id": "018",
+      "image": "/images/clothing/2.jpg",
+      "company": "FashionHub",
+      "item_name": "Women's Summer Dress",
+      "category": "Clothing",
+      "original_price": 1500,
+      "current_price": 1200,
+      "discount_percentage": 20,
+      "return_period": 15,
+      "delivery_date": "13 Nov 2023",
+      "rating": {
+        "stars": 4.6,
+        "count": 1500
+      }
+    },
+    {
+      "id": "019",
+      "image": "/images/clothing/3.jpg",
+      "company": "Trendz",
+      "item_name": "Unisex Hoodie",
+      "category": "Clothing",
+      "original_price": 2200,
+      "current_price": 1760,
+      "discount_percentage": 20,
+      "return_period": 15,
+      "delivery_date": "11 Nov 2023",
+      "rating": {
+        "stars": 4.5,
+        "count": 940
+      }
+    },
+    {
+      "id": "020",
+      "image": "/images/clothing/4.jpg",
+      "company": "Cozy Knit",
+      "item_name": "Woolen Scarf",
+      "category": "Clothing",
+      "original_price": 800,
+      "current_price": 640,
+      "discount_percentage": 20,
+      "return_period": 15,
+      "delivery_date": "12 Nov 2023",
+      "rating": {
+        "stars": 4.8,
+        "count": 420
+      }
+    },
+    {
+      "id": "021",
+      "image": "/images/clothing/5.jpg",
+      "company": "StyleNest",
+      "item_name": "Formal Blazer",
+      "category": "Clothing",
+      "original_price": 3500,
+      "current_price": 2975,
+      "discount_percentage": 15,
+      "return_period": 15,
+      "delivery_date": "14 Nov 2023",
+      "rating": {
+        "stars": 4.7,
+        "count": 780
+      }
+    },
+    {
+      "id": "022",
+      "image": "/images/clothing/6.jpg",
+      "company": "Comfort Zone",
+      "item_name": "Cotton Pajamas",
+      "category": "Clothing",
+      "original_price": 1200,
+      "current_price": 1020,
+      "discount_percentage": 15,
+      "return_period": 15,
+      "delivery_date": "13 Nov 2023",
+      "rating": {
+        "stars": 4.6,
+        "count": 600
+      }
+    },
+    {
+      "id": "023",
+      "image": "/images/clothing/7.jpg",
+      "company": "Athlete Pro",
+      "item_name": "Running Shorts",
+      "category": "Clothing",
+      "original_price": 700,
+      "current_price": 560,
+      "discount_percentage": 20,
+      "return_period": 15,
+      "delivery_date": "10 Nov 2023",
+      "rating": {
+        "stars": 4.5,
+        "count": 500
+      }
+    },
+    {
+      "id": "024",
+      "image": "/images/clothing/8.jpg",
+      "company": "Elegant Threads",
+      "item_name": "Silk Tie",
+      "category": "Clothing",
+      "original_price": 900,
+      "current_price": 765,
+      "discount_percentage": 15,
+      "return_period": 15,
+      "delivery_date": "12 Nov 2023",
+      "rating": {
+        "stars": 4.7,
+        "count": 250
+      }
+    },
+    {
+      "id": "025",
+      "image": "/images/furniture/1.jpg",
+      "company": "Home Style",
+      "item_name": "Wooden Dining Table",
+      "category": "Furniture",
+      "original_price": 12000,
+      "current_price": 10200,
+      "discount_percentage": 15,
+      "return_period": 30,
+      "delivery_date": "20 Nov 2023",
+      "rating": {
+        "stars": 4.6,
+        "count": 300
+      }
+    },
+    {
+      "id": "026",
+      "image": "/images/furniture/2.jpg",
+      "company": "Comfort Living",
+      "item_name": "Sofa Set",
+      "category": "Furniture",
+      "original_price": 25000,
+      "current_price": 22500,
+      "discount_percentage": 10,
+      "return_period": 30,
+      "delivery_date": "22 Nov 2023",
+      "rating": {
+        "stars": 4.7,
+        "count": 150
+      }
+    },
+    {
+      "id": "027",
+      "image": "/images/furniture/3.jpg",
+      "company": "OfficeWorks",
+      "item_name": "Ergonomic Chair",
+      "category": "Furniture",
+      "original_price": 8000,
+      "current_price": 6800,
+      "discount_percentage": 15,
+      "return_period": 30,
+      "delivery_date": "19 Nov 2023",
+      "rating": {
+        "stars": 4.5,
+        "count": 420
+      }
+    },
+    {
+      "id": "028",
+      "image": "/images/furniture/4.jpg",
+      "company": "SleepWell",
+      "item_name": "Queen Size Bed",
+      "category": "Furniture",
+      "original_price": 15000,
+      "current_price": 13500,
+      "discount_percentage": 10,
+      "return_period": 30,
+      "delivery_date": "20 Nov 2023",
+      "rating": {
+        "stars": 4.8,
+        "count": 300
+      }
+    },
+    {
+      "id": "029",
+      "image": "/images/furniture/5.jpg",
+      "company": "Storage Solutions",
+      "item_name": "Bookshelf",
+      "category": "Furniture",
+      "original_price": 5000,
+      "current_price": 4250,
+      "discount_percentage": 15,
+      "return_period": 30,
+      "delivery_date": "18 Nov 2023",
+      "rating": {
+        "stars": 4.6,
+        "count": 230
+      }
+    },
+    {
+      "id": "030",
+      "image": "/images/furniture/6.jpg",
+      "company": "Deco Home",
+      "item_name": "Coffee Table",
+      "category": "Furniture",
+      "original_price": 3000,
+      "current_price": 2700,
+      "discount_percentage": 10,
+      "return_period": 30,
+      "delivery_date": "19 Nov 2023",
+      "rating": {
+        "stars": 4.4,
+        "count": 280
+      }
+    },
+    {
+      "id": "031",
+      "image": "/images/furniture/7.jpg",
+      "company": "Lux Comfort",
+      "item_name": "Recliner Chair",
+      "category": "Furniture",
+      "original_price": 12000,
+      "current_price": 10800,
+      "discount_percentage": 10,
+      "return_period": 30,
+      "delivery_date": "21 Nov 2023",
+      "rating": {
+        "stars": 4.7,
+        "count": 450
+      }
+    },
+    {
+      "id": "032",
+      "image": "/images/furniture/8.jpg",
+      "company": "Elegant Decor",
+      "item_name": "Wall Mirror",
+      "category": "Furniture",
+      "original_price": 2500,
+      "current_price": 2125,
+      "discount_percentage": 15,
+      "return_period": 30,
+      "delivery_date": "17 Nov 2023",
+      "rating": {
+        "stars": 4.5,
+        "count": 360
+      }
+    },
+    {
+      "id": "033",
+      "image": "/images/jewelry/1.jpg",
+      "company": "Carlton London",
+      "item_name": "Gold-Plated CZ Ring",
+      "category": "Jewelry",
+      "original_price": 3000,
+      "current_price": 2400,
+      "discount_percentage": 20,
+      "return_period": 14,
+      "delivery_date": "10 Nov 2023",
+      "rating": {
+        "stars": 4.5,
+        "count": 500
+      }
+    },
+    {
+      "id": "034",
+      "image": "/images/jewelry/2.jpg",
+      "company": "Sparkle Collection",
+      "item_name": "Silver Stud Earrings",
+      "category": "Jewelry",
+      "original_price": 1500,
+      "current_price": 1200,
+      "discount_percentage": 20,
+      "return_period": 14,
+      "delivery_date": "12 Nov 2023",
+      "rating": {
+        "stars": 4.6,
+        "count": 780
+      }
+    },
+    {
+      "id": "035",
+      "image": "/images/jewelry/3.jpg",
+      "company": "Glamour Gems",
+      "item_name": "Diamond Bracelet",
+      "category": "Jewelry",
+      "original_price": 8000,
+      "current_price": 7200,
+      "discount_percentage": 10,
+      "return_period": 14,
+      "delivery_date": "15 Nov 2023",
+      "rating": {
+        "stars": 4.7,
+        "count": 340
+      }
+    },
+    {
+      "id": "036",
+      "image": "/images/jewelry/4.jpg",
+      "company": "Shiny Stones",
+      "item_name": "Pearl Necklace",
+      "category": "Jewelry",
+      "original_price": 4500,
+      "current_price": 3825,
+      "discount_percentage": 15,
+      "return_period": 14,
+      "delivery_date": "11 Nov 2023",
+      "rating": {
+        "stars": 4.8,
+        "count": 500
+      }
+    },
+    {
+      "id": "037",
+      "image": "/images/jewelry/5.jpg",
+      "company": "Elegance",
+      "item_name": "Emerald Ring",
+      "category": "Jewelry",
+      "original_price": 6000,
+      "current_price": 5400,
+      "discount_percentage": 10,
+      "return_period": 14,
+      "delivery_date": "13 Nov 2023",
+      "rating": {
+        "stars": 4.6,
+        "count": 290
+      }
+    },
+    {
+      "id": "038",
+      "image": "/images/jewelry/6.jpg",
+      "company": "Classic Jewels",
+      "item_name": "Gold Chain",
+      "category": "Jewelry",
+      "original_price": 5000,
+      "current_price": 4500,
+      "discount_percentage": 10,
+      "return_period": 14,
+      "delivery_date": "12 Nov 2023",
+      "rating": {
+        "stars": 4.5,
+        "count": 410
+      }
+    },
+    {
+      "id": "039",
+      "image": "/images/jewelry/7.jpg",
+      "company": "Luxury Bling",
+      "item_name": "Sapphire Pendant",
+      "category": "Jewelry",
+      "original_price": 5500,
+      "current_price": 4675,
+      "discount_percentage": 15,
+      "return_period": 14,
+      "delivery_date": "11 Nov 2023",
+      "rating": {
+        "stars": 4.8,
+        "count": 320
+      }
+    },
+    {
+      "id": "040",
+      "image": "/images/jewelry/8.jpg",
+      "company": "Ornate",
+      "item_name": "Ruby Earrings",
+      "category": "Jewelry",
+      "original_price": 4500,
+      "current_price": 3825,
+      "discount_percentage": 15,
+      "return_period": 14,
+      "delivery_date": "13 Nov 2023",
+      "rating": {
+        "stars": 4.6,
+        "count": 410
+      }
+    }
+  ]
+}

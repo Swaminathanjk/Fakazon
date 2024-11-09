@@ -1,0 +1,130 @@
+/* Footer Styles */
+.footer {
+  background-color: #232f3e; /* Dark background */
+  color: #fff;
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer_content {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap; /* To make it responsive */
+}
+
+/* Footer Left Section */
+.footer_content_left {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer_content_left ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer_content_left li {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.footer_content_left li:hover {
+  color: #ffa41b; /* Accent color on hover */
+}
+
+/* Footer Right Section */
+.footer_content_right {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer_content_right ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer_content_right li {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.footer_content_right li:hover {
+  color: #ffa41b;
+}
+
+/* "Back to Top" Button */
+.backTotop {
+  text-align: center;
+  width: 100vw;
+  background-color: #ffa41b;
+  color: #232f3e;
+  font-size: 1rem;
+  padding: 10px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.backTotop:hover {
+  background-color: #e08200;
+}
+
+/* Responsive Design for Footer */
+@media (max-width: 768px) {
+  .footer {
+    padding: 20px 30px;
+  }
+
+  .footer_content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer_content_left,
+  .footer_content_right {
+    flex: 1;
+    min-width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .footer_content_left ul,
+  .footer_content_right ul {
+    padding: 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 15px 20px;
+  }
+
+  .footer_content_left,
+  .footer_content_right {
+    min-width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .footer_content_left li,
+  .footer_content_right li {
+    font-size: 0.85rem;
+  }
+
+  .backTotop {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}

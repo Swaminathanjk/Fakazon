@@ -1,0 +1,79 @@
+/* Home Banner Section */
+.home-banner {
+  width: 100%;
+  height: 500px;
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1),
+    rgba(109, 101, 155, 0)
+  );
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  margin-top: 0; /* Ensure no extra space */
+}
+
+.home-bannerimg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* For smaller screens (tablet and mobile) */
+@media (max-width: 1024px) {
+  .home-banner {
+    margin-top: -420px;
+    height: 400px; /* Slightly reduced height for tablet screens */
+    font-size: 1.8rem; /* Adjust font size for medium screens */
+  }
+}
+
+/* For mobile screens (less than 768px) */
+@media (max-width: 768px) {
+  .home-banner {
+    /* margin-top: -520px; */
+    height: 300px; /* Further reduced height for mobile */
+    font-size: 1.5rem; /* Smaller font size */
+    padding: 20px; /* Add padding for breathing space */
+  }
+
+  .home-bannerimg {
+    object-position: center; /* Ensure the image is centered */
+  }
+}
+
+/* For very small screens (less than 480px) */
+@media (max-width: 480px) {
+  .home-banner {
+    margin-top: -450px;
+    height: 250px; /* Smaller height on very small screens */
+    font-size: 1.2rem; /* Further smaller font size */
+  }
+
+  .home-bannerimg {
+    object-position: top; /* Align image towards the top on small screens */
+  }
+}
+
+@media (max-width: 380px) {
+  .home-banner {
+    margin-top: -340px;
+    height: 250px; /* Smaller height on very small screens */
+    font-size: 1.2rem; /* Further smaller font size */
+  }
+
+  .home-bannerimg {
+    object-position: top; /* Align image towards the top on small screens */
+  }
+}
