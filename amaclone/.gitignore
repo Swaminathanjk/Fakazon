@@ -22,3 +22,5 @@ firebaseConfig.js
 *.njsproj
 *.sln
 *.sw?
+
+src/firebaseConfig.js
