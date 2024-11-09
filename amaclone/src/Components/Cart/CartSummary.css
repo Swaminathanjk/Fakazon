@@ -5,24 +5,48 @@
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin-top: 60px;
+  animation: fadeIn 1s ease-out;
+}
+
+/* Animation for cart summary container */
+@keyframes fadeIn {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
 }
 
 /* Cart Details */
 .cart-details-container {
   margin-bottom: 20px;
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Animation for cart details */
+@keyframes fadeInUp {
+  0% { transform: translateY(10px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
 }
 
 .price-header {
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 15px;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
+/* Price Items */
 .price-item {
   display: flex;
   justify-content: space-between;
   font-size: 1rem;
   margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.price-item:hover {
+  background-color: #f9f9f9;
+  border-radius: 5px;
 }
 
 .price-item-tag {
@@ -37,6 +61,7 @@
 
 .priceDetail-base-discount {
   color: #f44336; /* Red for discounts */
+  font-weight: bold;
 }
 
 /* Price Footer */
@@ -48,10 +73,12 @@
   margin-top: 10px;
   border-top: 1px solid #ddd;
   padding-top: 10px;
+  transition: background-color 0.3s ease;
 }
 
-.price-item-value {
-  color: #333;
+.price-footer:hover {
+  background-color: #f1f1f1;
+  border-radius: 5px;
 }
 
 /* Payment Method Section */
@@ -60,6 +87,8 @@
   display: flex;
   flex-direction: row;
   gap: 10px;
+  transition: opacity 0.3s ease;
+  animation: fadeInUp 1s ease-out;
 }
 
 /* Style each label and input pair */
@@ -68,9 +97,14 @@
   align-items: center; /* Vertically align radio button with text */
   font-size: 1rem;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-/* Adjust the radio button */
+.payment-method-container label:hover {
+  transform: scale(1.05);
+  color: #ff5722;
+}
+
 .payment-method-container input[type="radio"] {
   margin-right: 1px; /* Space between radio button and text */
   accent-color: #ff5722; /* Optional: color for selected radio button */
@@ -90,6 +124,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-color 0.3s ease;
 }
 
 .btn-place-order h3 {
@@ -99,13 +134,13 @@
 
 .btn-place-order:hover {
   background-color: #e64a19;
+  transform: scale(1.05);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .cart-summary {
     margin-top: 20px;
-
     padding: 15px;
   }
 

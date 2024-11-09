@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 import "./Signup.css"; // Ensure this path is correct
 import { Link, useNavigate } from "react-router-dom"; // Import useNavigate for navigation
-import { auth,db } from "../../firebaseConfig.js"; // Ensure this path is correct
+import { auth, db } from "../../firebaseConfig.js"; // Ensure this path is correct
 import { createUserWithEmailAndPassword } from "firebase/auth"; // Ensure this path is correct
 import axios from "axios"; // Import Axios
 import { setDoc, doc } from "firebase/firestore"; // Import Firestore methods
-
+import { useSelector } from "react-redux";
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [error, setError] = useState("");
 
+  const { url } = useSelector((store) => store.url);
   const navigate = useNavigate(); // Use navigate for navigation
 
   const getErrorMessage = (errorCode) => {
@@ -41,7 +42,7 @@ const Signup = () => {
       const user = userCredential.user;
 
       // Send the user data to your backend to store in MongoDB
-      await axios.post("http://localhost:5000/api/user", {
+      await axios.post(`${url}/api/user`, {
         uid: user.uid, // Firebase UID
         name: name, // User's name
         email: email, // User's email

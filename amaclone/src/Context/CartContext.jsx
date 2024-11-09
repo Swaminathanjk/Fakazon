@@ -1,6 +1,7 @@
 import React, { createContext, useState, useEffect } from "react";
 import axios from "axios";
 import { getAuth } from "firebase/auth";
+import { useSelector } from "react-redux";
 
 export const CartContext = createContext();
 
@@ -8,7 +9,7 @@ export const CartProvider = ({ children }) => {
   const [cartCount, setCartCount] = useState(0);
   const [localItemCount, setLocalItemCount] = useState(0); // State to store item count locally
   const [cart, setCart] = useState([]); // Cart state to store items in the cart
-
+  const { url } = useSelector((store) => store.url);
   const [cartItems, setCartItems] = useState([]); // Shared cart items state
   const [cartTrig, setCartTrig] = useState(false); // A trigger for updates
 
@@ -26,7 +27,7 @@ export const CartProvider = ({ children }) => {
   const fetchCartData = async (uid) => {
     try {
       const token = await auth.currentUser.getIdToken();
-      const response = await axios.get("http://localhost:5000/api/cart", {
+      const response = await axios.get(`${url}/api/cart`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

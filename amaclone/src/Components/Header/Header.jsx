@@ -45,7 +45,6 @@ const Header = () => {
           if (userDoc.exists()) {
             const fetchedUsername = userDoc.data().name;
             setUsername(fetchedUsername); // Update local state
-            dispatch(usernameActions.setUsername(fetchedUsername)); // Update Redux store
           } else {
             console.log("No such document!");
           }
@@ -67,7 +66,6 @@ const Header = () => {
       .then(() => {
         console.log("User signed out successfully");
         setUsername(""); // Reset username state
-        dispatch(usernameActions.setUsername("")); // Clear username in Redux store
         setCartCount(0);
         setCartItems([]);
         window.location.reload();

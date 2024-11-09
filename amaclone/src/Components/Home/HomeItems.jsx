@@ -1,14 +1,15 @@
-import React, { useEffect, useState , useContext } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "./HomeItems.css";
 import { FaTrash } from "react-icons/fa";
 import { IoMdAddCircleOutline } from "react-icons/io";
 import axios from "axios";
 import { getAuth } from "firebase/auth";
-
+import { useSelector } from "react-redux";
 import { CartContext } from "../../Context/CartContext.jsx";
 
 const HomeItems = ({ item }) => {
   const [localItemCount, setLocalItemCount] = useState(0); // State to store item count locally
+  const { url } = useSelector((store) => store.url);
   const auth = getAuth();
   const user = auth.currentUser; // Get the currently logged-in user
   const userId = user ? user.uid : null; // Use Firebase UID as the user identifier
@@ -20,7 +21,6 @@ const HomeItems = ({ item }) => {
       fetchCartData(userId); // Fetch cart data when component mounts
     }
   }, [userId]);
-
 
   // Fetch the cart data from the backend
   const fetchCartData = async (uid) => {
@@ -35,7 +35,7 @@ const HomeItems = ({ item }) => {
       // console.log(token);
 
       console.log(`Fetching cart for userId: ${uid}`);
-      const response = await axios.get("http://localhost:5000/api/cart", {
+      const response = await axios.get(`${url}/api/cart`, {
         headers: {
           Authorization: ` Bearer ${token}`, // Pass the Firebase token in the Authorization header
         },
@@ -45,7 +45,6 @@ const HomeItems = ({ item }) => {
       updateItemCount(response.data.items);
 
       // Dispatch each product ID to Redux, then set the total count
-     
 
       // Set total cart count in Redux
     } catch (error) {
@@ -96,7 +95,7 @@ const HomeItems = ({ item }) => {
       if (localItemCount === 0) {
         // If localItemCount is 0, add the item to the cart
         const response = await axios.post(
-          "http://localhost:5000/api/cart/add",
+          `${url}/api/cart/add`,
           {
             userId,
             items: [{ productId: item._id, quantity: updatedItemCount }],
@@ -111,7 +110,7 @@ const HomeItems = ({ item }) => {
       } else {
         // If localItemCount is greater than 0, update the item quantity in the cart
         const response = await axios.patch(
-          "http://localhost:5000/api/cart/update",
+          `${url}/api/cart/update`,
           cartItemData,
           {
             headers: {
@@ -146,20 +145,15 @@ const HomeItems = ({ item }) => {
 
     try {
       const token = await auth.currentUser.getIdToken();
-      
-      
 
       if (updatedItemCount === 0) {
         // Remove item completely from the cart
-        await axios.delete(
-          `http://localhost:5000/api/cart/remove/${item._id}`,
-          {
-            data: { userId },
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
+        await axios.delete(`${url}/api/cart/remove/${item._id}`, {
+          data: { userId },
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
       } else {
         // Update the item quantity if still greater than 0
         const cartItemData = {
@@ -167,15 +161,11 @@ const HomeItems = ({ item }) => {
           productId: item._id,
           quantity: updatedItemCount,
         };
-        await axios.patch(
-          "http://localhost:5000/api/cart/update",
-          cartItemData,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
+        await axios.patch(`${url}/api/cart/update`, cartItemData, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
       }
 
       console.log("Item updated in backend cart");
@@ -190,7 +180,7 @@ const HomeItems = ({ item }) => {
     <div className="item-container">
       <img
         className="item-image"
-        src={`http://localhost:5000/images/${item.image}`}
+        src={`${url}/images/${item.image}`}
         alt={item.item_name}
       />
       <div className="item-details">

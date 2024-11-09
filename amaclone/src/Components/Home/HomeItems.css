@@ -5,34 +5,55 @@
   align-items: center;
   background-color: #fff;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 15px;
   margin: 10px;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 100%;
-  max-width: 300px; /* Limit width on larger screens */
+  max-width: 300px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .item-container:hover {
-  transform: scale(1.05); /* Slight hover effect */
+  
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  animation: subtleBounce 0.5s ease;
+}
+
+/* Subtle bounce animation for item container */
+@keyframes subtleBounce {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
 /* Item Image */
 .item-image {
   width: 100%;
   height: 200px;
-  object-fit: cover; /* Ensures the image is well contained */
+  object-fit: cover;
   border-radius: 8px;
   margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.item-image:hover {
+  transform: scale(1.1);
 }
 
 /* Item Details Section */
 .item-details {
   width: 100%;
   text-align: center;
+  opacity: 0;
+  animation: fadeIn 0.8s forwards;
+}
+
+/* Fade-in animation for item details */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* Company Name */
@@ -40,6 +61,11 @@
   font-size: 1rem;
   color: #555;
   margin-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+.company-name:hover {
+  color: #ff4500;
 }
 
 /* Item Name */
@@ -48,6 +74,11 @@
   font-weight: bold;
   color: #232f3e;
   margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.item-name:hover {
+  color: #ff9900;
 }
 
 /* Price Section */
@@ -55,6 +86,7 @@
   font-size: 1rem;
   color: #232f3e;
   margin-bottom: 15px;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .current-price {
@@ -71,6 +103,14 @@
 .discount {
   font-size: 0.9rem;
   color: #ff4500;
+  opacity: 0;
+  animation: fadeInUp 0.6s forwards;
+}
+
+/* Fade-in from the bottom animation for discount */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Buttons Section */
@@ -88,17 +128,32 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .btn-add-bag:hover,
 .btn-remove-bag:hover {
   background-color: #e68900;
+  transform: scale(1.05);
+  animation: subtlePulse 0.4s infinite alternate;
+}
+
+/* Subtle pulse effect on button hover */
+@keyframes subtlePulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.05); }
 }
 
 /* Icons */
 .add,
 .trash {
   margin-right: 8px;
+  transition: transform 0.3s ease;
+}
+
+.btn-add-bag:hover .add,
+.btn-remove-bag:hover .trash {
+  transform: rotate(15deg);
 }
 
 /* Responsive Design */
@@ -109,7 +164,7 @@
   }
 
   .item-image {
-    height: 180px; /* Adjust image height for smaller screens */
+    height: 180px;
   }
 
   .company-name {
@@ -137,13 +192,13 @@
   }
 
   .item-image {
-    height: 160px; /* Further adjust image height for small devices */
+    height: 160px;
   }
 
   .company-name,
   .item-name,
   .price {
-    font-size: 0.85rem; /* Reduce text size for mobile */
+    font-size: 0.85rem;
   }
 
   .btn-add-bag,

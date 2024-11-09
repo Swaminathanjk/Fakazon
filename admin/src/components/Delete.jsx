@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../CSS/Delete.css";
-
+import { url } from "../Url";
 const ProductList = () => {
   const [products, setProducts] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
 
-  const url = "http://localhost:5000";
+  
 
   useEffect(() => {
     const fetchProducts = async () => {

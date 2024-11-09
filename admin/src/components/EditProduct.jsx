@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import "../CSS/EditProduct.css";
-
+import { url } from "../Url";
 const EditProduct = () => {
   const { id } = useParams(); // Get the product ID from the URL parameters
   const navigate = useNavigate();
@@ -25,9 +25,7 @@ const EditProduct = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:5000/api/products/${id}`
-        );
+        const response = await axios.get(`${url}/api/products/${id}`);
         console.log(response.data); // Log fetched data for debugging
         setProduct(response.data);
         setFormData({
@@ -82,15 +80,11 @@ const EditProduct = () => {
     }
 
     try {
-      await axios.put(
-        `http://localhost:5000/api/products/${id}`,
-        formDataToSend,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data", // Set content type for file upload
-          },
-        }
-      );
+      await axios.put(`${url}/api/products/${id}`, formDataToSend, {
+        headers: {
+          "Content-Type": "multipart/form-data", // Set content type for file upload
+        },
+      });
       alert("Product updated successfully!");
       navigate("/admin"); // Redirect to manage products
     } catch (error) {

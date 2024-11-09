@@ -6,10 +6,13 @@ import { FiMinusCircle } from "react-icons/fi";
 import axios from "axios";
 import { getAuth } from "firebase/auth";
 import { CartContext } from "../../Context/CartContext";
+import { useSelector } from "react-redux";
 
 const CartItems = ({ item, quantity }) => {
   const [localItemCount, setLocalItemCount] = useState(quantity); // Initialize with the current quantity
   const { setCartItems, setCartCount } = useContext(CartContext);
+  const { url } = useSelector((store) => store.url);
+
   const auth = getAuth();
   const user = auth.currentUser;
   const userId = user ? user.uid : null;
@@ -29,7 +32,7 @@ const CartItems = ({ item, quantity }) => {
 
     try {
       const token = await auth.currentUser.getIdToken();
-      const response = await axios.get("http://localhost:5000/api/cart", {
+      const response = await axios.get(`${url}/api/cart`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -71,17 +74,18 @@ const CartItems = ({ item, quantity }) => {
 
       if (localItemCount === 0) {
         await axios.post(
-          "http://localhost:5000/api/cart/add",
-          { userId, items: [{ productId: item._id, quantity: updatedItemCount }] },
+          `${url}/api/cart/add`,
+          {
+            userId,
+            items: [{ productId: item._id, quantity: updatedItemCount }],
+          },
           { headers: { Authorization: `Bearer ${token}` } }
         );
         console.log("Item added to backend cart");
       } else {
-        await axios.patch(
-          "http://localhost:5000/api/cart/update",
-          cartItemData,
-          { headers: { Authorization: `Bearer ${token}` } }
-        );
+        await axios.patch(`${url}/api/cart/update`, cartItemData, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
         console.log("Item quantity updated in backend cart");
       }
 
@@ -110,13 +114,10 @@ const CartItems = ({ item, quantity }) => {
 
       if (updatedItemCount === 0) {
         // Remove the item from the cart if count reaches 0
-        await axios.delete(
-          `http://localhost:5000/api/cart/remove/${item._id}`,
-          {
-            data: { userId },
-            headers: { Authorization: `Bearer ${token}` },
-          }
-        );
+        await axios.delete(`${url}/api/cart/remove/${item._id}`, {
+          data: { userId },
+          headers: { Authorization: `Bearer ${token}` },
+        });
         console.log("Item removed from backend cart");
       } else {
         const cartItemData = {
@@ -124,11 +125,9 @@ const CartItems = ({ item, quantity }) => {
           productId: item._id,
           quantity: updatedItemCount,
         };
-        await axios.patch(
-          "http://localhost:5000/api/cart/update",
-          cartItemData,
-          { headers: { Authorization: `Bearer ${token}` } }
-        );
+        await axios.patch(`${url}/api/cart/update`, cartItemData, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
         console.log("Item quantity updated in backend cart");
       }
 
@@ -153,7 +152,7 @@ const CartItems = ({ item, quantity }) => {
 
     try {
       const token = await auth.currentUser.getIdToken();
-      await axios.delete(`http://localhost:5000/api/cart/remove/${item._id}`, {
+      await axios.delete(`${url}/api/cart/remove/${item._id}`, {
         data: { userId },
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -162,14 +161,14 @@ const CartItems = ({ item, quantity }) => {
     } catch (error) {
       console.error("Error removing item from cart:", error);
     }
-    }
+  };
 
   return (
     <div className="cart-item-container">
       <div className="item-left-part">
         <img
           className="cart-item-img"
-          src={`http://localhost:5000/images/${item.image}`}
+          src={`${url}/images/${item.image}`}
           alt={item.item_name}
         />
       </div>
@@ -179,7 +178,9 @@ const CartItems = ({ item, quantity }) => {
         <div className="price-container">
           <span className="current-price">Rs {item.current_price}</span>
           <span className="original-price">Rs {item.original_price}</span>
-          <span className="discount-percentage">({item.discount_percentage}% OFF)</span>
+          <span className="discount-percentage">
+            ({item.discount_percentage}% OFF)
+          </span>
         </div>
         <div className="qty">
           Qty: {localItemCount}{" "}

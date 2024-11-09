@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import "../CSS/AddProducts.css"
-
+import "../CSS/AddProducts.css";
+import { url } from "../Url";
 const AddProducts = () => {
   const [productName, setProductName] = useState("");
   const [originalPrice, setOriginalPrice] = useState("");
@@ -27,6 +27,8 @@ const AddProducts = () => {
       setImage(file);
     }
   };
+
+  console.log(url);
 
   const resizeImage = (file, width, height) => {
     return new Promise((resolve, reject) => {
@@ -81,15 +83,11 @@ const AddProducts = () => {
     }
 
     try {
-      const response = await axios.post(
-        "http://localhost:5000/api/products",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      const response = await axios.post(`${url}/api/products`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
       alert("Product added successfully!");
       console.log(response.data);
     } catch (error) {

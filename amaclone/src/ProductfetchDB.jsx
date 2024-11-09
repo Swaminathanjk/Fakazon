@@ -5,7 +5,10 @@ import { productActions } from "./Store/productSlice";
 
 const Productfetch = () => {
   const fetchStatus = useSelector((store) => store.fetchStatus);
+  const {url} = useSelector((store) => store.url);
   const dispatch = useDispatch();
+  console.log(`${url}/api/products`);
+  
 
   useEffect(() => {
     // Prevent fetching if already done
@@ -17,7 +20,7 @@ const Productfetch = () => {
     dispatch(fetchingActions.fetchingStart());
 
     // Fetching products from the backend
-    fetch("http://localhost:5000/api/products", { signal })
+    fetch(`${url}/api/products`, { signal })
       .then((res) => {
         if (!res.ok) {
           throw new Error("Network response was not ok");

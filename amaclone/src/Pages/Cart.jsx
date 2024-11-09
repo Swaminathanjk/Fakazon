@@ -5,6 +5,7 @@ import CartSummary from "../Components/Cart/CartSummary";
 import { CartContext } from "../Context/CartContext"; // Import the custom hook
 import axios from "axios";
 import { getAuth } from "firebase/auth";
+import { useSelector } from "react-redux";
 
 const Cart = () => {
   const [userAddress, setUserAddress] = useState(null);
@@ -12,7 +13,7 @@ const Cart = () => {
   const auth = getAuth();
   const user = auth.currentUser;
   const userId = user ? user.uid : null;
-
+  const { url } = useSelector((store) => store.url);
   // Fetch cart and address data when userId or cartTrig changes
   useEffect(() => {
     if (userId) {
@@ -25,7 +26,7 @@ const Cart = () => {
   const fetchCartData = async (uid) => {
     try {
       const token = await auth.currentUser.getIdToken();
-      const response = await axios.get("http://localhost:5000/api/cart", {
+      const response = await axios.get(`${url}/api/cart`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setCartItems(response.data.items); // Update cartItems in context
@@ -37,7 +38,7 @@ const Cart = () => {
   // Fetch user address from backend
   const fetchUserAddress = async (uid) => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/user/${uid}`);
+      const response = await axios.get(`${url}/api/user/${uid}`);
       setUserAddress(response.data.address || null);
     } catch (error) {
       console.error("Error fetching user address:", error);

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "../CSS/UpdateProduct.css";
-
+import { url } from "../Url";
 const UpdateProduct = () => {
   const [products, setProducts] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
@@ -11,7 +11,7 @@ const UpdateProduct = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/products");
+        const response = await axios.get(`${url}/api/products`);
         setProducts(response.data);
       } catch (error) {
         console.error("Error fetching products:", error);
@@ -48,7 +48,7 @@ const UpdateProduct = () => {
             <Link to={`/edit-product/${product._id}`} className="product-link">
               <div className="product-card">
                 <img
-                  src={`http://localhost:5000/images/${product.image}`}
+                  src={`${url}/images/${product.image}`}
                   alt={product.item_name}
                   className="product-image"
                 />

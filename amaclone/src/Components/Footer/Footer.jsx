@@ -5,6 +5,9 @@ import { useSelector } from "react-redux";
 
 const Footer = ({ scrollToTop }) => {
 
+  const {url} = useSelector((store) => store.url);
+  console.log(`${url}/api/cart/add`);
+
  
   
   return (

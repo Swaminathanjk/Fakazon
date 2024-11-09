@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 const FetchDB = () => {
   const products = useSelector((store) => store.products);
-
+  const { url } = useSelector((store) => store.url);
   const uploadProducts = async () => {
     for (const item of products) {
       const formData = new FormData();
@@ -27,7 +27,7 @@ const FetchDB = () => {
 
       try {
         const response = await axios.post(
-          "http://localhost:5000/api/products",
+          `${url}/api/products`,
           formData,
           {
             headers: {

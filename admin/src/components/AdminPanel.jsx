@@ -3,8 +3,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import "../CSS/AdminPanel.css";
+import { url } from "../Url";
 
 const AdminPanel = () => {
+
+  console.log(url);
   return (
     <div className="admin-panel">
       <h1 className="admin-panel-title">Admin Panel</h1>

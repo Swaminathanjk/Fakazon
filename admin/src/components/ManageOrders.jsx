@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-
+import { url } from "../Url";
 const ManageOrders = () => {
   const [orders, setOrders] = useState([]);
 
