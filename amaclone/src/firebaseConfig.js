@@ -13,3 +13,5 @@ const auth = getAuth(app); // Initialize Auth
 const db = getFirestore(app); // Initialize Firestore (if needed)
 
 export { app, auth, db }; // Export the initialized services
+ 
+// test
