@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 
 const orderSchema = new mongoose.Schema(
   {
+    customerName: { type: String, required: true },
     userId: { type: String, required: true },
     items: [
       {
@@ -22,5 +23,5 @@ const orderSchema = new mongoose.Schema(
   }
 );
 
-const Order = mongoose.model("Order", orderSchema);
+const Order = mongoose.model("Order", orderSchema); 
 export default Order;

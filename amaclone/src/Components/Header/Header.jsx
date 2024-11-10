@@ -58,7 +58,7 @@ const Header = () => {
 
     // Cleanup subscription on component unmount
     return () => unsubscribe();
-  }, [dispatch]);
+  }, [auth]);
 
   // Function to handle sign out
   const handleSignOut = () => {

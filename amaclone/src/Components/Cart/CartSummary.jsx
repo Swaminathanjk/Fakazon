@@ -2,11 +2,11 @@ import React, { useContext, useState } from "react";
 import axios from "axios";
 import { CartContext } from "../../Context/CartContext";
 import "./CartSummary.css";
-
+import {Link, useNavigate} from "react-router-dom"
 const CartSummary = ({ userId, address }) => {
   const { cartItems } = useContext(CartContext); // Accessing cartItems from context
   const [paymentMethod, setPaymentMethod] = useState("stripe"); // "stripe" or "cod"
-
+  const navigate = useNavigate();
   console.log("CartItems:", cartItems);
   
   // Calculate pricing details dynamically
@@ -30,40 +30,7 @@ const CartSummary = ({ userId, address }) => {
 
   // Function to handle placing an order
   const handlePlaceOrder = async () => {
-    try {
-      const orderData = {
-        userId,
-        items: cartItems.map((cartItem) => ({
-          _id: cartItem.productId._id,
-          quantity: cartItem.quantity,
-          name: cartItem.productId.item_name,
-          price: cartItem.productId.current_price,
-        })),
-        amount: finalPayment + CONVENIENCE_FEES,
-        address,
-      };
-
-      if (paymentMethod === "stripe") {
-        const response = await axios.post("/api/orders/placeOrder", orderData);
-        if (response.data.success) {
-          window.location.href = response.data.session_url; // Redirect to stripe session
-        } else {
-          console.log("Failed to place order:", response.data.message);
-        }
-      } else {
-        const response = await axios.post(
-          "/api/orders/placeOrderCod",
-          orderData
-        );
-        if (response.data.success) {
-          alert("Order successfully placed with Cash on Delivery!");
-        } else {
-          console.log("Failed to place order:", response.data.message);
-        }
-      }
-    } catch (error) {
-      console.error("Error placing order:", error);
-    }
+    navigate("/payment")
   };
 
   return (
@@ -121,7 +88,7 @@ const CartSummary = ({ userId, address }) => {
         className="btn-place-order"
         onClick={handlePlaceOrder} // Call handlePlaceOrder on click
       >
-        <h3>Place Order</h3>
+        <Link><h3>Proceed to Checkout</h3></Link>
       </button>
     </div>
   );
